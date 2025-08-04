@@ -8,19 +8,17 @@ Proposto pelo programa de bolsa **CompassUOL**.
 
 ## Distro
 
-O projeto utiliza a WSL do Windows com a Distro Ubuntu.
+O projeto utiliza a **WSL** do Windows com a Distro **Ubuntu**.
 
-<p align="center">
-  <img src="./img/terminal_distro.png" alt="Terminal Distro Ubuntu" style="margin-top: 10px; margin-bottom: 20px; width: 70%;">
-</p>
+<img width="978" height="504" alt="image" src="https://github.com/user-attachments/assets/7ba51088-6174-45f2-89b9-081d2b081a4b" />
+
 
 ---
 
 ## Instalação e Configuração do Nginx
+**Nginx** é um servidor web, normalmente utilizado para hospedar sites
 
-Toda a instalação e configuração será realizada com o usuário `root`.
-
-Para acessar o usuário `root`, utilize o comando abaixo. Será solicitada a senha para execução:
+A instalação e configuração serão feitas usando o usuário `root`. Para acessar esse usuário, utilize o comando abaixo; será solicitada a senha para prosseguir:
 
 ### Sintaxe
 ```bash
@@ -29,9 +27,17 @@ su
 
 Após a execução, o terminal ficará assim:
 
-<p align="center"> 
-<img src="./img/comando_su.png" alt="Terminal com usuário root" style="margin-top: 10px; margin-bottom: 20px; width: 70%;"> 
-</p>
+<img width="979" height="507" alt="image" src="https://github.com/user-attachments/assets/d524d53a-154b-4e64-b51e-ab061668e810" />
 
+---
 
+Para instalar os pacotes **Nginx**, você utiliza o comando:
+### Sintaxe
+```bash
+apt update
+apt upgrade
+apt install nginx
+```
+Você poderá confirmar todas as instalações que o terminal pedir.
 
+<img width="978" height="504" alt="image" src="https://github.com/user-attachments/assets/9fcedf38-9243-4193-8758-7d7da15519c8" />

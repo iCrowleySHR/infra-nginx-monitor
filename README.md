@@ -103,6 +103,8 @@ Com o **Nginx** já instalado, o próximo passo é implementar o nosso site no s
 
 O site que será hospedado está disponível em um repositório no **GitHub**, e utilizaremos o **Git** para clonar esse repositório diretamente para o ambiente do servidor.
 
+---
+
 ### Instalação do Git
 Para instalar os pacotes **Git**, utilizaremos os comandos:
 
@@ -116,6 +118,8 @@ Devemos confirmar todas as instalações que o terminal pedir.
 <p align="center">
 <img width="978" height="505" alt="image" src="https://github.com/user-attachments/assets/990a2acf-378c-4f42-ac5f-33312ee480f2" />
 </p>
+
+---
 
 Para obter os arquivos do repositório do **GitHub** e disponibilizá-los no servidor **Nginx**, primeiro precisamos acessar o diretório responsável por hospedar o site.
 ### Sintaxe

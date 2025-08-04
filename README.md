@@ -32,7 +32,7 @@ Após a execução, o terminal ficará assim:
 
 ---
 
-Para instalar os pacotes **Nginx**, você utiliza o comando:
+Para instalar os pacotes **Nginx**, utilizaremos os comandos:
 ### Sintaxe
 ```bash
 apt update
@@ -40,12 +40,12 @@ apt upgrade
 apt install nginx
 ```
 
-Você poderá confirmar todas as instalações que o terminal pedir.
+Devemos confirmar todas as instalações que o terminal pedir.
 <p align="center">
 <img width="978" height="504" alt="image" src="https://github.com/user-attachments/assets/9fcedf38-9243-4193-8758-7d7da15519c8" />
 </p>
 
-Automáticamente após a instalação, o servidor já estará funcionando, você podera conferir o status do serviço atráves do comando:
+Automaticamente após a instalação, o servidor já estará funcionando, podemos conferir o status do serviço atráves do comando:
 
 ```bash
 systemctl status nginx

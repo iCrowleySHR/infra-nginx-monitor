@@ -62,12 +62,35 @@ Para manipular a aplicação futuramente, utilizaremos essa tabela a seguir.
 | Comando                         | Ação                                           |
 |----------------------------------|------------------------------------------------|
 | `systemctl status`              | Mostra o status geral do `systemd`            |
-| `systemctl status nome.service` | Mostra o status de um serviço específico       |
-| `systemctl start nome.service`  | Inicia o serviço                               |
-| `systemctl stop nome.service`   | Para o serviço                                 |
-| `systemctl restart nome.service`| Reinicia o serviço                             |
-| `systemctl reload nome.service` | Recarrega as configurações sem reiniciar       |
-| `systemctl enable nome.service` | Ativa o serviço para iniciar com o sistema     |
-| `systemctl disable nome.service`| Desativa o serviço no boot                     |
-| `systemctl is-active nome.service` | Verifica se o serviço está ativo           |
+| `systemctl status nome` | Mostra o status de um serviço específico       |
+| `systemctl start nome`  | Inicia o serviço                               |
+| `systemctl stop nome`   | Para o serviço                                 |
+| `systemctl restart nome`| Reinicia o serviço                             |
+| `systemctl reload nome` | Recarrega as configurações sem reiniciar       |
+| `systemctl enable nome` | Ativa o serviço para iniciar com o sistema     |
+| `systemctl disable nome`| Desativa o serviço no boot                     |
+| `systemctl is-active nome` | Verifica se o serviço está ativo           |
 | `systemctl list-units --type=service` | Lista todos os serviços carregados       |
+
+Caso o serviço esteja desativado, podemos iniciar ele atráves do comando 
+```bash
+systemctl start nginx
+```
+
+---
+
+Como o serviço do Nginx já está em execução e o WSL configura automaticamente as interfaces de rede, o site pode ser acessado localmente na sua máquina e, em alguns casos, até pela sua rede doméstica (se o compartilhamento estiver ativado).
+
+Para descobrir o IP local da máquina, utilize o comando:
+```bash
+ip -4 a
+```
+<p align="center">
+<img width="978" height="506" alt="image" src="https://github.com/user-attachments/assets/10537702-3a8b-4660-abb6-f6abee7e365b" />
+</p>
+
+Com qualquer um dos endereços IP exibidos, você pode acessar o site digitando-o diretamente no navegador. Isso mostrará a página padrão do **Nginx** em execução no seu ambiente local.
+
+<p align="center">
+<img width="1919" height="1000" alt="image" src="https://github.com/user-attachments/assets/a661d69e-9a01-493e-8268-f88e3805f4b1" />
+</p>

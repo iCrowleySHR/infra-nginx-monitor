@@ -97,15 +97,9 @@ Com qualquer um dos endereços IP exibidos, você pode acessar o site digitando 
 
 ---
 
-## Configurações do Nginx
-
-Com o **Nginx** já instalado, o próximo passo é implementar o nosso site no servidor para que ele possa ser acessado. Caso necessário, também faremos ajustes nas configurações padrão.
-
+## Instalação do Git
 O site que será hospedado está disponível em um repositório no **GitHub**, e utilizaremos o **Git** para clonar esse repositório diretamente para o ambiente do servidor.
 
----
-
-### Instalação do Git
 Para instalar os pacotes **Git**, utilizaremos os comandos:
 
 ### Sintaxe
@@ -120,6 +114,11 @@ Devemos confirmar todas as instalações que o terminal pedir.
 </p>
 
 ---
+
+## Configurações do Nginx
+
+Com o **Nginx** e **Git** já instalados, o próximo passo é implementar o nosso site no servidor para que ele possa ser acessado. Caso necessário, também faremos ajustes nas configurações padrão.
+
 
 Para obter os arquivos do repositório do **GitHub** e disponibilizá-los no servidor **Nginx**, primeiro precisamos acessar o diretório responsável por hospedar o site.
 ### Sintaxe

@@ -79,7 +79,7 @@ systemctl start nginx
 
 ---
 
-Como o serviço do Nginx já está em execução e o WSL configura automaticamente as interfaces de rede, o site pode ser acessado localmente na sua máquina e, em alguns casos, até pela sua rede doméstica (se o compartilhamento estiver ativado).
+Como o serviço do **Nginx** já está em execução e o **WSL** configura automaticamente as interfaces de rede, o site pode ser acessado localmente na sua máquina e, em alguns casos, até pela sua rede doméstica (se o compartilhamento estiver ativado).
 
 Para descobrir o IP local da máquina, utilize o comando:
 ```bash
@@ -89,7 +89,7 @@ ip -4 a
 <img width="978" height="506" alt="image" src="https://github.com/user-attachments/assets/10537702-3a8b-4660-abb6-f6abee7e365b" />
 </p>
 
-Com qualquer um dos endereços IP exibidos, você pode acessar o site digitando-o diretamente no navegador. Isso mostrará a página padrão do **Nginx** em execução no seu ambiente local.
+Com qualquer um dos endereços IP exibidos, você pode acessar o site digitando diretamente no navegador. Isso mostrará a página padrão do **Nginx** em execução no seu ambiente local.
 
 <p align="center">
 <img width="1919" height="1000" alt="image" src="https://github.com/user-attachments/assets/a661d69e-9a01-493e-8268-f88e3805f4b1" />

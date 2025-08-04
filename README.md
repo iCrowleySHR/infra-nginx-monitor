@@ -15,7 +15,7 @@ O projeto utiliza a **WSL** do Windows com a Distro **Ubuntu**.
 
 ---
 
-## Instalação e Configuração do Nginx
+## Instalação do Nginx
 **Nginx** é um servidor web, normalmente utilizado para hospedar sites
 
 A instalação e configuração serão feitas usando o usuário `root`. Para acessar esse usuário, utilize o comando abaixo; será solicitada a senha para prosseguir:
@@ -94,3 +94,31 @@ Com qualquer um dos endereços IP exibidos, você pode acessar o site digitando 
 <p align="center">
 <img width="1919" height="1000" alt="image" src="https://github.com/user-attachments/assets/a661d69e-9a01-493e-8268-f88e3805f4b1" />
 </p>
+
+---
+
+## Configurações do Nginx
+
+Com o **Nginx** já instalado, o próximo passo é implementar o nosso site no servidor para que ele possa ser acessado. Caso necessário, também faremos ajustes nas configurações padrão.
+
+O site que será hospedado está disponível em um repositório no **GitHub**, e utilizaremos o **Git** para clonar esse repositório diretamente para o ambiente do servidor.
+
+### Instalação do Git
+Para instalar os pacotes **Git**, utilizaremos os comandos:
+
+### Sintaxe
+```bash
+apt install git
+```
+
+Devemos confirmar todas as instalações que o terminal pedir.
+
+<p align="center">
+<img width="978" height="505" alt="image" src="https://github.com/user-attachments/assets/990a2acf-378c-4f42-ac5f-33312ee480f2" />
+</p>
+
+Para obter os arquivos do repositório do **GitHub** e disponibilizá-los no servidor **Nginx**, primeiro precisamos acessar o diretório responsável por hospedar o site.
+### Sintaxe
+```bash
+cd /var/www/html
+```

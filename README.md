@@ -53,7 +53,6 @@ systemctl status nginx
 
 Para sair basta clicar `Q` ou `CTRL + C`
 
-Imagem de como você deve encontrar o terminal: 
 <p align="center">
 <img width="980" height="503" alt="image" src="https://github.com/user-attachments/assets/c44539a0-804f-4644-a84f-56bb8e24b9d7" />
 </p>

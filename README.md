@@ -135,3 +135,7 @@ Nesse diretório, podemos clonar o nosso repositório
 ```bash
 git clone https://github.com/iCrowleySHR/infra-nginx-monitor.git
 ```
+
+<p align="center">
+<img width="973" height="507" alt="image" src="https://github.com/user-attachments/assets/db4fe663-3c12-4812-b50a-b1fc9b4440f9" />
+</p>

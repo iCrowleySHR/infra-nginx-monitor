@@ -200,6 +200,134 @@ Nesse projeto, utilizaremos o **Discord** para notificação de erros na nossa a
 <img width="1853" height="1005" alt="image" src="https://github.com/user-attachments/assets/9fbf1247-0197-4e7a-9a39-1ccd1dbbac7b" />
 </p>
 
+Precisamos do Webhooks do bot, podemos encontrar nesse menu:
+
+`Config. do servidor -> Interações -> Webhooks`
+
+<p align="center">
+<img width="1852" height="1033" alt="image" src="https://github.com/user-attachments/assets/5c45ab4c-e1f2-4252-b129-11b9032312d3" />
+</p>
+
+<p align="center">
+<img width="1920" height="1042" alt="image" src="https://github.com/user-attachments/assets/d1f0a129-3366-4df7-afc4-e3ffcbb82f3f" />
+</p>
+
+Copie a URL, ela será muito importante, o script mandará através dela quando o servidor estiver Offilne.
+
+---
+
+Agora clonaremos novamente nosso repositório para pegarmos o script. Criaremos uma pasta para armazenar nossos scripts :
+
+`/monitoramento/`
+
+### Sintaxe
+```bash
+mkdir /monitoramento
+
+```
+
+<p align="center">
+<img width="1360" height="508" alt="image" src="https://github.com/user-attachments/assets/9bc65b32-35d7-45ce-a436-6d3aec0e5b91" />
+</p>
+
+Agora entraremos nela e clonaremos denovo o repositório, porém pegaremos apenas o script que precisamos.
+Pegaremos o `monitor.sh` e `.env.example` 
+
+### Sintaxe
+```bash
+cd /monitoramento
+git clone https://github.com/iCrowleySHR/infra-nginx-monitor.git
+mv infra-nginx-monitor/script/monitor.sh infra-nginx-monitor/script/.env.example /monitoramento/
+rm -r infra-nginx-monitor
+```
+
+<p align="center">
+<img width="1369" height="337" alt="image" src="https://github.com/user-attachments/assets/68d5875c-1f69-45e2-92a3-83edb05ab943" />
+<img width="1375" height="192" alt="image" src="https://github.com/user-attachments/assets/930d12ba-d8db-4bb3-9569-104529a740e7" />
+</p>
+
+---
+
+Agora iremos configurar o `.env`, entraremos no `.env.example`, e colocaremos a URL do servidor **Nginx** e a URL do WebHook.
+
+Logo após as alterações salvaremos apenas com o nome `.env`.
+
+Utilizaremos o **Nano**, Após as alterações use `CTRL + O`, e altere o nome do arquivo para `.env`
+
+Caso não saiba a `SITE_URL`, basta usar o comando que usamos anteriormente.
+
+### Sintaxe
+```bash
+ip -4 a
+```
+
+### Sintaxe
+```bash
+nano .env.example
+```
+
+<p align="center">
+<img width="1370" height="628" alt="image" src="https://github.com/user-attachments/assets/72cc5f20-7721-4c64-9865-3166fd5940da" />
+</p>
+
+Após isso, devemos dar permissões para o `monitor.sh` e criar os arquivos de logs com as permissões. Podemos utilizar esses comandos.
+
+### Sintaxe
+```bash
+chmod +x /monitoramento/monitor.sh
+sudo touch /var/log/monitoramento.log
+sudo chmod 666 /var/log/monitoramento.log
+```
+
+<p align="center">
+<img width="1372" height="629" alt="image" src="https://github.com/user-attachments/assets/76de5967-3cea-4e67-a7a5-9d621558ce3b" />
+</p>
 
 
+---
 
+Para o código ser executado a cada minuto, devemos acessar o `crontab`.
+
+### Sintaxe
+```bash
+crontab -e
+```
+
+Dentro do arquivo, colocaremos no final dele esse trecho para rodar a cada minuto e salvaremos.
+```bash
+* * * * * /monitoramento/monitor.sh
+```
+
+<p align="center">
+<img width="1373" height="629" alt="image" src="https://github.com/user-attachments/assets/592bb679-7e2f-4291-a49c-05f6f5b7e290" />
+</p>
+
+## Testes
+
+Com todos esses passos, o **Nginx** está online e a cada minuto está sendo monitorado o funcioamento dele pelo `monitor.sh`
+
+Podemos conferir entrando nos logs do script
+### Sintaxe
+```bash
+cat /var/log/monitoramento.log
+```
+
+<p align="center">
+<img width="1369" height="629" alt="image" src="https://github.com/user-attachments/assets/5491f554-54c6-49df-9cdf-695fe9d00a01" />
+</p>
+
+---
+
+
+Em caso de erros, seremos notificados pelo servidor do **Discord** e será armazenado no `/var/log/monitoramento.log`
+
+Na imagem a seguir, o **Nginx** será parado e aparecerá as mensagens no **Discord**
+
+Podemos usar a tabela apresentada anteriormente para controlar os serviços
+
+<p align="center">
+<img width="1856" height="1019" alt="image" src="https://github.com/user-attachments/assets/3e12db88-9e51-4c12-9ba8-799ac18cedf3" />
+<img width="1072" height="625" alt="image" src="https://github.com/user-attachments/assets/cdf06f58-b833-4971-a765-b9f470d22d94" />
+</p>
+
+---

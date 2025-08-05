@@ -323,7 +323,7 @@ Em caso de erros, seremos notificados pelo servidor do **Discord** e será armaz
 
 Na imagem a seguir, o **Nginx** será parado e aparecerá as mensagens no **Discord**
 
-Podemos usar a tabela apresentada anteriormente para controlar os serviços
+Podemos usar a tabela apresentada anteriormente para controlar os serviços.
 
 <p align="center">
 <img width="1856" height="1019" alt="image" src="https://github.com/user-attachments/assets/3e12db88-9e51-4c12-9ba8-799ac18cedf3" />
@@ -331,3 +331,15 @@ Podemos usar a tabela apresentada anteriormente para controlar os serviços
 </p>
 
 ---
+
+Toda vez que o Linux é ligado, ele sempre executará o script a cada minuto e o **Nginx** sempre estará ligado, com as configurações apresentadas.
+
+O `monitor.sh` está todo comentado para entendimento completo do código.
+
+## Veja o vídeo de funcionamento
+
+<a href="https://www.youtube.com/watch?v=8fT1ba6jNdo">
+  <p align="center">
+    <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e1cc40fe-0606-462e-b458-e595de40a31c" />
+  </p>
+</a>

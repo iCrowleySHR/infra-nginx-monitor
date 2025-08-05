@@ -129,7 +129,6 @@ cd /var/www/html
 <img width="977" height="508" alt="image" src="https://github.com/user-attachments/assets/13af554b-fed2-4707-975e-ae3823168c50" />
 </p>
 
-Nesse diretório, podemos clonar o nosso repositório
 
 ### Sintaxe
 ```bash
@@ -137,5 +136,46 @@ git clone https://github.com/iCrowleySHR/infra-nginx-monitor.git
 ```
 
 <p align="center">
-<img width="973" height="507" alt="image" src="https://github.com/user-attachments/assets/db4fe663-3c12-4812-b50a-b1fc9b4440f9" />
+<img width="974" height="507" alt="image" src="https://github.com/user-attachments/assets/5708230d-f8a0-4a3c-b951-fd5e2b6721a4" />
+</p>
+
+Com o repositório clonado, precisamos apenas transferir os arquivos do site para a raíz da pasta.
+Entraremos dentro da pasta usando:
+
+### Sintaxe
+```bash
+cd infra-nginx-monitor/website
+```
+<p align="center">
+<img width="973" height="507" alt="image" src="https://github.com/user-attachments/assets/8f9966a6-1c49-4775-ad03-b6a94aec30c8" />
+</p>
+
+O nome dos arquivos podem ser encontrados digitando `ls` dentro da pasta
+
+Depois de entrarmos, usaremos o comando `mv` para mover os arquivos para o diretório `/var/www/html`
+
+### Sintaxe
+```bash
+mv index.html reveal.js style.css /var/www/html
+```
+<p align="center">
+<img width="977" height="510" alt="image" src="https://github.com/user-attachments/assets/75cacf47-9521-49e1-8158-07c399704d56" />
+</p>
+
+Agora voltaremos para a pasta ´/var/www/html´ para excluirmos os arquivos desnecessários, como o arquivo index do **Nginx** e a pasta que clonamos, que não utilizaremos mais.
+
+### Sintaxe
+```bash
+cd /var/www/html
+rm -r index.nginx-debian.html
+rm -r infra-nginx-monitor
+```
+<p align="center">
+<img width="979" height="515" alt="image" src="https://github.com/user-attachments/assets/8e9fdb26-1832-46d6-8eb9-a41cb3d0f779" />
+</p>
+
+Depois dessas configurações, se você acessar o seu IP novamente no navegador, você já encontrará seu site hospedado com sucesso!
+
+<p align="center">
+<img width="1920" height="1003" alt="image" src="https://github.com/user-attachments/assets/2727fa5f-21a1-4b6a-b4f4-b237339d1d0e" />
 </p>

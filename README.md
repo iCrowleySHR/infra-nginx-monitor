@@ -125,3 +125,13 @@ Para obter os arquivos do repositório do **GitHub** e disponibilizá-los no ser
 ```bash
 cd /var/www/html
 ```
+<p align="center">
+<img width="977" height="508" alt="image" src="https://github.com/user-attachments/assets/13af554b-fed2-4707-975e-ae3823168c50" />
+</p>
+
+Nesse diretório, podemos clonar o nosso repositório
+
+### Sintaxe
+```bash
+git clone https://github.com/iCrowleySHR/infra-nginx-monitor.git
+```

@@ -179,3 +179,27 @@ Depois dessas configurações, se você acessar o seu IP novamente no navegador,
 <p align="center">
 <img width="1920" height="1003" alt="image" src="https://github.com/user-attachments/assets/2727fa5f-21a1-4b6a-b4f4-b237339d1d0e" />
 </p>
+
+---
+
+O **Nginx** vem configurado automaticamente para funcionamento após sua instalação, mas, os arquivos de configurações de porta e etc, podem ser encontrados nos diretórios abaixo:
+
+`/etc/nginx/sites-enabled/`
+
+`/etc/nginx/sites-available/`
+
+`/etc/nginx/nginx.conf`
+
+---
+
+## Script de Monitoramento + Webhook
+
+Nesse projeto, utilizaremos o **Discord** para notificação de erros na nossa aplicação, foi criado um servidor onde por ele será enviado qualquer alerta de erro.
+
+<p align="center">
+<img width="1853" height="1005" alt="image" src="https://github.com/user-attachments/assets/9fbf1247-0197-4e7a-9a39-1ccd1dbbac7b" />
+</p>
+
+
+
+

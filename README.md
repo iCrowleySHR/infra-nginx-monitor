@@ -4,6 +4,8 @@ Este projeto tem como objetivo configurar uma infraestrutura Linux local capaz d
 
 Proposto pelo programa de bolsa **CompassUOL**.
 
+<img width="139" height="48" alt="image" src="https://github.com/user-attachments/assets/4faaf2ea-d6c2-4e02-9507-3f4e928108aa" />
+
 ---
 
 ## Distro

@@ -140,7 +140,7 @@ git clone https://github.com/iCrowleySHR/infra-nginx-monitor.git
 </p>
 
 Com o repositório clonado, precisamos apenas transferir os arquivos do site para a raíz da pasta.
-Entraremos dentro da pasta usando:
+Acesse a pasta com o comando:
 
 ### Sintaxe
 ```bash
@@ -162,7 +162,7 @@ mv index.html reveal.js style.css /var/www/html
 <img width="977" height="510" alt="image" src="https://github.com/user-attachments/assets/75cacf47-9521-49e1-8158-07c399704d56" />
 </p>
 
-Agora voltaremos para a pasta ´/var/www/html´ para excluirmos os arquivos desnecessários, como o arquivo index do **Nginx** e a pasta que clonamos, que não utilizaremos mais.
+Agora voltaremos para a pasta `/var/www/html` para excluirmos os arquivos desnecessários, como o arquivo index do **Nginx** e a pasta que clonamos, que não utilizaremos mais.
 
 ### Sintaxe
 ```bash
@@ -212,7 +212,7 @@ Precisamos do Webhooks do bot, podemos encontrar nesse menu:
 <img width="1920" height="1042" alt="image" src="https://github.com/user-attachments/assets/d1f0a129-3366-4df7-afc4-e3ffcbb82f3f" />
 </p>
 
-Copie a URL, ela será muito importante, o script mandará através dela quando o servidor estiver Offilne.
+Copie a URL, ela será muito importante, o script a utilizará para enviar alertas sempre que o servidor estiver offline.
 
 ---
 
@@ -343,3 +343,6 @@ O `monitor.sh` está todo comentado para entendimento completo do código.
     <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e1cc40fe-0606-462e-b458-e595de40a31c" />
   </p>
 </a>
+
+## Finalização
+Com isso, sua infraestrutura local com Nginx está instalada, monitorada e pronta para receber notificações em tempo real via Discord.

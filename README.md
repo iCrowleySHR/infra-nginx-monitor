@@ -8,6 +8,33 @@ Proposto pelo programa de bolsa **CompassUOL**.
 
 ---
 
+## Índice
+
+- [Funcionalidades Implementadas](#funcionalidades-implementadas)  
+- [Ferramentas utilizadas](#ferramentas-utilizadas)  
+- [Distro](#distro)  
+- [Instalação do Nginx](#instalação-do-nginx)  
+- [Instalação do Git](#instalação-do-git)  
+- [Configurações do Nginx](#configurações-do-nginx)  
+- [Script de Monitoramento + Webhook](#script-de-monitoramento--webhook)  
+- [Explicação do Script monitor.sh](#explicação-do-script-monitorsh)  
+- [Testes](#testes)  
+- [Finalização](#finalização)  
+
+---
+
+## Funcionalidades Implementadas
+
+- **Hospedagem local** com Nginx e HTML/CSS/JS.
+- **Monitoramento automático** do serviço com `monitor.sh`.
+- **Integração via Webhook** para alertas no Discord.
+- **Execução agendada** com `crontab` para verificar o status a cada minuto.
+- **Armazenamento de logs** em `/var/log/monitoramento.log`.
+- **Configuração no WSL (Ubuntu)** para fácil uso em ambiente Windows.
+- **Controle de serviços** via `systemctl` com comandos documentados.
+
+---
+
 ## Ferramentas utilizadas
 
 <table>
@@ -39,6 +66,11 @@ Proposto pelo programa de bolsa **CompassUOL**.
       <td align="center">
       <img src="https://skillicons.dev/icons?i=nginx" width="60"/><br>
       <sub><b>Nginx</b></sub>
+    </td>
+    </td>
+      <td align="center">
+      <img src="https://skillicons.dev/icons?i=git" width="60"/><br>
+      <sub><b>Git</b></sub>
     </td>
   </tr>
 </table>
@@ -255,9 +287,60 @@ Copie a URL, ela será muito importante, o script a utilizará para enviar alert
 
 ---
 
-Agora clonaremos novamente nosso repositório para pegarmos o script. Criaremos uma pasta para armazenar nossos scripts :
+## Explicação do Script monitor.sh
+O script `monitor.sh` verifica automaticamente se o servidor web está online e envia alertas para o Discord caso o site fique fora do ar. Ele registra tudo em um arquivo de log para acompanhamento.
+Veja o código dele todo comentado para entendimento.
 
-`/monitoramento/`
+```bash
+# Define o caminho do arquivo .env (mesmo diretório do script)
+ENV_FILE="$(dirname "$0")/.env"
+
+# Verifica se o arquivo .env existe
+if [ -f "$ENV_FILE" ]; then
+    # Exporta as variáveis do .env, ignorando linhas comentadas
+    export $(grep -v '^#' "$ENV_FILE" | xargs)
+else
+    # Caso não encontre o .env, mostra erro e encerra o script
+    echo "[ERRO] Arquivo .env não encontrado!"
+    exit 1
+fi
+
+# Define a URL do site (do .env ou padrão localhost)
+URL="${SITE_URL:-http://localhost}"
+
+# URL do Webhook do Discord (do .env)
+WEBHOOK_URL="$DISCORD_WEBHOOK"
+
+# Caminho do arquivo de log
+LOG_FILE="/var/log/monitoramento.log"
+
+# Data e hora atuais
+DATA=$(date '+%Y-%m-%d %H:%M:%S')
+
+# Faz requisição para o site e captura o código HTTP de resposta
+STATUS_CODE=$(curl -s -o /dev/null -w "%{http_code}" "$URL")
+
+# Se o status for diferente de 200, considera que o site está fora do ar
+if [ "$STATUS_CODE" -ne 200 ]; then
+    # Monta a mensagem de erro
+    MSG="[$DATA] 🚨 Site fora do ar! Status HTTP: $STATUS_CODE"
+    # Registra no log
+    echo "$MSG" >> "$LOG_FILE"
+    # Envia alerta para o Discord
+    curl -s -H "Content-Type: application/json" \
+         -X POST \
+         -d "{\"content\": \"$MSG\"}" \
+         "$WEBHOOK_URL" > /dev/null
+else
+    # Caso o site esteja OK, registra no log
+    echo "[$DATA] ✅ Site OK (Status: $STATUS_CODE)" >> "$LOG_FILE"
+fi
+
+```
+
+---
+
+Criaremos uma pasta para armazenar nossos scripts com o nome `/monitoramento/`, nela iremos armazenar nosso script e configurá-lo:
 
 ### Sintaxe
 ```bash
@@ -270,7 +353,7 @@ mkdir /monitoramento
 </p>
 
 Agora entraremos nela e clonaremos denovo o repositório, porém pegaremos apenas o script que precisamos.
-Pegaremos o `monitor.sh` e `.env.example` 
+Pegaremos o `monitor.sh` e o `.env.example`. O comando abaixo entra na pasta, clona o repositório e move os arquivos necessário para a raíz da pasta `/monitoramento/`. Após isso, exclui os arquivos desnecessários.
 
 ### Sintaxe
 ```bash
@@ -373,7 +456,6 @@ Podemos usar a tabela apresentada anteriormente para controlar os serviços.
 
 Toda vez que o Linux é ligado, ele sempre executará o script a cada minuto e o **Nginx** sempre estará ligado, com as configurações apresentadas.
 
-O `monitor.sh` está todo comentado para entendimento completo do código.
 
 ## Veja o vídeo de funcionamento
 

@@ -375,17 +375,11 @@ rm -r infra-nginx-monitor
 
 ---
 
-Agora iremos configurar o `.env`, entraremos no `.env.example`, e colocaremos a URL do servidor **Nginx** e a URL do WebHook.
-
-Logo após as alterações salvaremos apenas com o nome `.env`.
-
-Utilizaremos o **Nano**, Após as alterações use `CTRL + O`, e altere o nome do arquivo para `.env`
-
-Caso não saiba a `SITE_URL`, basta usar o comando que usamos anteriormente.
+Agora iremos configurar o `.env`, entraremos no `.env.example`, e colocaremos a URL do servidor **Nginx** e a URL do WebHook. Logo após as alterações salvaremos apenas com o nome `.env` e utilizaremos o **Nano**, após as alterações use `CTRL + O`, e altere o nome do arquivo para `.env`. Caso não saiba a `SITE_URL`, basta usar o comando que usamos anteriormente.
 
 ### Sintaxe
 ```bash
-ip -4 a
+ip -4 a   #Comando para descobrir a IP para acessar o site
 ```
 
 ### Sintaxe

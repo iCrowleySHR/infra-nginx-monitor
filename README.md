@@ -426,7 +426,7 @@ Dentro do arquivo, colocaremos no final dele esse trecho para rodar a cada minut
 
 ## Testes
 
-Com todos esses passos, o **Nginx** está online e a cada minuto está sendo monitorado o funcioamento dele pelo `monitor.sh`
+Com todos esses passos, o **Nginx** está online e a cada minuto está sendo monitorado o funcionamento dele pelo `monitor.sh`
 
 Podemos conferir entrando nos logs do script
 ### Sintaxe

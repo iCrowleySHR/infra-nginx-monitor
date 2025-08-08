@@ -8,6 +8,43 @@ Proposto pelo programa de bolsa **CompassUOL**.
 
 ---
 
+## Ferramentas utilizadas
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://skillicons.dev/icons?i=ubuntu" width="60"/><br>
+      <sub><b>Ubuntu</b></sub>
+    </td>
+    <td align="center">
+      <img src="https://skillicons.dev/icons?i=html" width="60"/><br>
+      <sub><b>HTML</b></sub>
+    </td>
+    <td align="center">
+      <img src="https://skillicons.dev/icons?i=css" width="60"/><br>
+      <sub><b>CSS</b></sub>
+    </td>
+    <td align="center">
+      <img src="https://skillicons.dev/icons?i=js" width="60"/><br>
+      <sub><b>JavaScript</b></sub>
+    </td>
+    <td align="center">
+      <img src="https://skillicons.dev/icons?i=bash" width="60"/><br>
+      <sub><b>Bash</b></sub>
+    </td>
+    <td align="center">
+      <img src="https://skillicons.dev/icons?i=discord" width="60"/><br>
+      <sub><b>Discord</b></sub>
+    </td>
+      <td align="center">
+      <img src="https://skillicons.dev/icons?i=nginx" width="60"/><br>
+      <sub><b>Nginx</b></sub>
+    </td>
+  </tr>
+</table>
+
+---
+
 ## Distro
 
 O projeto utiliza a **WSL** do Windows com a Distro **Ubuntu**.

@@ -269,6 +269,8 @@ O **Nginx** vem configurado automaticamente para funcionamento após sua instala
 ---
 
 ## Script de Monitoramento + Webhook
+O script de monitoramento verifica automaticamente se o servidor Nginx está funcionando. Caso o site fique fora do ar, ele envia um alerta para o Discord usando um Webhook, avisando na hora sobre o problema.
+Essa integração é importante para você receber notificações rápidas e conseguir agir antes que o problema afete os usuários. Iremos configurar tudo isso na WSL, junto ao script e o `.env` do repositório.
 
 Nesse projeto, utilizaremos o **Discord** para notificação de erros na nossa aplicação, foi criado um servidor onde por ele será enviado qualquer alerta de erro.
 
@@ -375,11 +377,14 @@ rm -r infra-nginx-monitor
 
 ---
 
-Agora iremos configurar o `.env`, entraremos no `.env.example`, e colocaremos a URL do servidor **Nginx** e a URL do WebHook. Logo após as alterações salvaremos apenas com o nome `.env` e utilizaremos o **Nano**, após as alterações use `CTRL + O`, e altere o nome do arquivo para `.env`. Caso não saiba a `SITE_URL`, basta usar o comando que usamos anteriormente.
+Agora vamos configurar o arquivo `.env`. Para isso, abra o arquivo `.env.example` e insira a URL do servidor **Nginx** e a **URL do Webhook**.
+Depois de fazer as alterações, salve o arquivo com o nome `.env`. Para isso, utilize o editor **Nano** e, ao salvar, pressione `CTRL + O`, depois altere o nome do arquivo para `.env` e confirme.
+Caso não saiba qual é o valor da variável `SITE_URL`, basta usar o comando que utilizamos anteriormente para descobrir a URL do servidor.
+É extremamente importante configurar esse arquivo corretamente, pois é através dele que o script saberá qual site monitorar e para quem enviar os avisos em caso de erro. Sem essa configuração, o script não funcionará.
 
 ### Sintaxe
 ```bash
-ip -4 a   #Comando para descobrir a IP para acessar o site
+ip -4 a  # Comando para descobrir a IP para acessar o site
 ```
 
 ### Sintaxe

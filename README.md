@@ -118,6 +118,7 @@ Devemos confirmar todas as instalações que o terminal pedir.
 
 Automaticamente após a instalação, o servidor já estará funcionando, podemos conferir o status do serviço atráves do comando:
 
+### Sintaxe
 ```bash
 systemctl status nginx
 ```
@@ -144,6 +145,8 @@ Para manipular a aplicação futuramente, utilizaremos essa tabela a seguir.
 | `systemctl list-units --type=service` | Lista todos os serviços carregados       |
 
 Caso o serviço esteja desativado, podemos iniciar ele atráves do comando 
+
+### Sintaxe
 ```bash
 systemctl start nginx
 ```
@@ -153,6 +156,8 @@ systemctl start nginx
 Como o serviço do **Nginx** já está em execução e o **WSL** configura automaticamente as interfaces de rede, o site pode ser acessado localmente na sua máquina e, em alguns casos, até pela sua rede doméstica (se o compartilhamento estiver ativado).
 
 Para descobrir o IP local da máquina, utilize o comando:
+
+### Sintaxe
 ```bash
 ip -4 a
 ```
@@ -416,6 +421,8 @@ crontab -e
 ```
 
 Dentro do arquivo, colocaremos no final dele esse trecho para rodar a cada minuto e salvaremos.
+
+### Sintaxe
 ```bash
 * * * * * /monitoramento/monitor.sh
 ```

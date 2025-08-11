@@ -330,7 +330,7 @@ STATUS_CODE=$(curl -s -o /dev/null -w "%{http_code}" "$URL")
 # Se o status for diferente de 200, considera que o site está fora do ar
 if [ "$STATUS_CODE" -ne 200 ]; then
     # Monta a mensagem de erro
-    MSG="[$DATA] 🚨 Site fora do ar! Status HTTP: $STATUS_CODE"
+    MSG="[$DATA] 🚨 Site fora do ar! Status HTTP: $STATUS_CODE ! Tentando reiniciar..."
     # Registra no log
     echo "$MSG" >> "$LOG_FILE"
     # Envia alerta para o Discord
@@ -338,6 +338,8 @@ if [ "$STATUS_CODE" -ne 200 ]; then
          -X POST \
          -d "{\"content\": \"$MSG\"}" \
          "$WEBHOOK_URL" > /dev/null
+    # Em caso de falha tenta reiniciar o servidor
+    sudo systemctl restart nginx
 else
     # Caso o site esteja OK, registra no log
     echo "[$DATA] ✅ Site OK (Status: $STATUS_CODE)" >> "$LOG_FILE"
@@ -430,6 +432,7 @@ Dentro do arquivo, colocaremos no final dele esse trecho para rodar a cada minut
 <img width="1373" height="629" alt="image" src="https://github.com/user-attachments/assets/592bb679-7e2f-4291-a49c-05f6f5b7e290" />
 </p>
 
+
 ## Testes
 
 Com todos esses passos, o **Nginx** está online e a cada minuto está sendo monitorado o funcionamento dele pelo `monitor.sh`
@@ -451,7 +454,12 @@ Em caso de erros, seremos notificados pelo servidor do **Discord** e será armaz
 
 Na imagem a seguir, o **Nginx** será parado e aparecerá as mensagens no **Discord**
 
-Podemos usar a tabela apresentada anteriormente para controlar os serviços.
+Podemos usar:
+### Sintaxe
+```bash
+systemctl stop nginx # Coamndo que para a aplicação
+```
+
 
 <p align="center">
 <img width="1856" height="1019" alt="image" src="https://github.com/user-attachments/assets/3e12db88-9e51-4c12-9ba8-799ac18cedf3" />

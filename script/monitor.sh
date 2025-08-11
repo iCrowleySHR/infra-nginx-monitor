@@ -19,7 +19,7 @@ DATA=$(date '+%Y-%m-%d %H:%M:%S')
 STATUS_CODE=$(curl -s -o /dev/null -w "%{http_code}" "$URL")
 
 if [ "$STATUS_CODE" -ne 200 ]; then
-    MSG="[$DATA] 🚨 Site fora do ar! Status HTTP: $STATUS_CODE"
+    MSG="[$DATA] 🚨 Site fora do ar! Status HTTP: $STATUS_CODE ! Tentando reiniciar..."
     echo "$MSG" >> "$LOG_FILE"
 
     # Enviar alerta para Discord
@@ -27,6 +27,7 @@ if [ "$STATUS_CODE" -ne 200 ]; then
          -X POST \
          -d "{\"content\": \"$MSG\"}" \
          "$WEBHOOK_URL" > /dev/null
+    sudo systemctl restart nginx
 else
     echo "[$DATA] ✅ Site OK (Status: $STATUS_CODE)" >> "$LOG_FILE"
 fi

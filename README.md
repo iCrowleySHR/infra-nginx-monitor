@@ -295,7 +295,7 @@ Copie a URL, ela será muito importante, o script a utilizará para enviar alert
 ---
 
 ## Explicação do Script monitor.sh
-O script `monitor.sh` verifica automaticamente se o servidor web está online e envia alertas para o Discord caso o site fique fora do ar. Ele registra tudo em um arquivo de log para acompanhamento.
+O script `monitor.sh` verifica automaticamente se o servidor web está online e envia alertas para o Discord caso o site fique fora do ar e reinicia o **Nginx** para voltar o normal. Ele registra tudo em um arquivo de log para acompanhamento.
 Veja o código dele todo comentado para entendimento.
 
 ```bash

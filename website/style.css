@@ -1,23 +1,80 @@
- body {
-     font-family: Arial, sans-serif;
-     background-color: #f4f6f8;
-     color: #333;
-     text-align: center;
-     padding-top: 100px;
- }
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
- h1 {
-     color: #2c3e50;
- }
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    color: #333;
+    background-color: #dadada;
+    padding-top: 100px;
+    position: relative;
+    z-index: 0;
+    overflow-x: hidden;
+}
 
- p {
-     font-size: 1.2em;
- }
 
- footer {
-     position: fixed;
-     bottom: 20px;
-     width: 100%;
-     color: #888;
-     font-size: 0.9em;
- }
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+header>p {
+    padding: 0;
+    margin: 0;
+}
+
+section {
+    width: 43.1vw;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.skills-table {
+    border-collapse: collapse;
+    margin: 20px auto;
+    background: #cecece;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.skills-table td {
+    padding: 20px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.skills-table td:hover {
+    background: rgba(255, 255, 255, 0.26);
+    transform: translateY(-1px);
+}
+
+.skills-table img {
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+
+.skills-table td:hover img {
+    transform: scale(1.1);
+}
+
+.skills-table sub {
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+}
+
+footer {
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    color: #888;
+    font-size: 0.9em;
+}

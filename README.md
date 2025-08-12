@@ -474,7 +474,7 @@ Toda vez que o Linux é ligado, ele sempre executará o script a cada minuto e o
 
 ## Veja o vídeo de funcionamento
 
-<a href="https://youtu.be/Os3R2x9EUNI">
+<a href="https://www.youtube.com/watch?v=7Khk-zYJhRs">
   <p align="center">
     <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e1cc40fe-0606-462e-b458-e595de40a31c" />
   </p>

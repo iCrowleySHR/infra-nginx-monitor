@@ -253,7 +253,7 @@ rm -r infra-nginx-monitor
 Depois dessas configurações, se você acessar o seu IP novamente no navegador, você já encontrará seu site hospedado com sucesso!
 
 <p align="center">
-<img width="1920" height="1003" alt="image" src="https://github.com/user-attachments/assets/2727fa5f-21a1-4b6a-b4f4-b237339d1d0e" />
+<img width="1920" height="1048" alt="image" src="https://github.com/user-attachments/assets/3cf92b63-04c6-4dfc-8378-a2e8a7db5a45" />
 </p>
 
 ---

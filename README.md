@@ -144,7 +144,7 @@ Para manipular a aplicação futuramente, utilizaremos essa tabela a seguir.
 | `systemctl is-active nome` | Verifica se o serviço está ativo           |
 | `systemctl list-units --type=service` | Lista todos os serviços carregados       |
 
-Caso o serviço esteja desativado, podemos iniciar ele atráves do comando 
+Caso o serviço esteja desativado, podemos iniciar ele através do comando 
 
 ### Sintaxe
 ```bash
@@ -215,7 +215,7 @@ git clone https://github.com/iCrowleySHR/infra-nginx-monitor.git
 <img width="974" height="507" alt="image" src="https://github.com/user-attachments/assets/5708230d-f8a0-4a3c-b951-fd5e2b6721a4" />
 </p>
 
-Com o repositório clonado, precisamos apenas transferir os arquivos do site para a raíz da pasta.
+Com o repositório clonado, precisamos apenas transferir os arquivos do site para a raiz da pasta.
 Acesse a pasta com o comando:
 
 ### Sintaxe

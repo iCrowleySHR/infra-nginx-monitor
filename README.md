@@ -116,7 +116,7 @@ Devemos confirmar todas as instalações que o terminal pedir.
 <img width="978" height="504" alt="image" src="https://github.com/user-attachments/assets/9fcedf38-9243-4193-8758-7d7da15519c8" />
 </p>
 
-Automaticamente após a instalação, o servidor já estará funcionando, podemos conferir o status do serviço atráves do comando:
+Automaticamente após a instalação, o servidor já estará funcionando, podemos conferir o status do serviço através do comando:
 
 ### Sintaxe
 ```bash
@@ -361,8 +361,8 @@ mkdir /monitoramento
 <img width="1360" height="508" alt="image" src="https://github.com/user-attachments/assets/9bc65b32-35d7-45ce-a436-6d3aec0e5b91" />
 </p>
 
-Agora entraremos nela e clonaremos denovo o repositório, porém pegaremos apenas o script que precisamos.
-Pegaremos o `monitor.sh` e o `.env.example`. O comando abaixo entra na pasta, clona o repositório e move os arquivos necessário para a raíz da pasta `/monitoramento/`. Após isso, exclui os arquivos desnecessários.
+Agora entraremos nela e clonaremos de novo o repositório, porém pegaremos apenas o script que precisamos.
+Pegaremos o `monitor.sh` e o `.env.example`. O comando abaixo entra na pasta, clona o repositório e move os arquivos necessário para a raiz da pasta `/monitoramento/`. Após isso, exclui os arquivos desnecessários.
 
 ### Sintaxe
 ```bash
@@ -457,7 +457,7 @@ Na imagem a seguir, o **Nginx** será parado e aparecerá as mensagens no **Disc
 Podemos usar:
 ### Sintaxe
 ```bash
-systemctl stop nginx # Coamndo que para a aplicação
+systemctl stop nginx # Comando que para a aplicação
 ```
 
 Quando a aplicação é parada, o `monitor.sh` reinicia o **Nginx** quando é detectado!
